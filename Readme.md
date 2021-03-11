@@ -71,9 +71,11 @@ you can specify by `CMAKE_C_FLAGS`, `CMAKE_CXX_FLAGS`, and `CMAKE_Fortran_FLAGS`
   ~~~
 
 
-### FUJITSU compiler / fx10, fx100, K computer on login nodes (Cross compilation) and intel TCS environment
+### FUJITSU compiler / Fugaku, fx10, fx100, K computer on login nodes (Cross compilation) and intel TCS environment
 
 ~~~
+$ cmake -DINSTALL_DIR=${TP_HOME}/TextParser -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain_Fugaku.cmake -Dwith_MPI=yes -Denable_fapi=yes -Denable_test=yes ..
+
 $ cmake -DINSTALL_DIR=${TP_HOME}/TextParser -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain_fx10.cmake -Dwith_MPI=yes -Denable_fapi=yes -Denable_test=yes ..
 
 $ cmake -DINSTALL_DIR=${TP_HOME}/TextParser -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain_fx100.cmake -Dwith_MPI=yes -Denable_fapi=yes -Denable_test=yes ..
@@ -85,7 +87,7 @@ $ cmake -DINSTALL_DIR=${TP_HOME}/TextParser -DCMAKE_TOOLCHAIN_FILE=../cmake/Tool
 
 
 ##### Note
-- On Fujitsu machines(fx10, K, fx100), confirm appropriate directrory path for compiler environment.
+- On Fujitsu machines(Fugaku, fx10, K, fx100), confirm appropriate directrory path for compiler environment.
 - Before building, execute following command for clean. `$ make distclean`
 
 

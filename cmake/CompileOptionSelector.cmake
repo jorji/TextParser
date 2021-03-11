@@ -18,16 +18,15 @@
 ##
 macro (AddOptimizeOption)
   if (TARGET_ARCH STREQUAL "INTEL_F_TCS")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Kfast  -Xg")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Kfast  -Xg")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Kfast")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Kfast")
     if(enable_fapi)
       set(CMAKE_Fortran_FLAGS "-Kfast")
     endif()
 
   elseif (USE_F_TCS STREQUAL "YES")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Kfast -Xg")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Kfast -Xg")
-    # -Xg   : gcc compatible flag
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Kfast")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Kfast")
     # -fPIC : PIC flag
     if(enable_fapi)
       set(CMAKE_Fortran_FLAGS "-Kfast")
