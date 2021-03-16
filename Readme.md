@@ -20,6 +20,9 @@ Text Parser library allows us to describe and to parse JSON like simple paramete
 
 ~~~
 $ export TP_HOME=/hogehoge
+
+Example: ${HOME}/lib
+
 $ mkdir BUILD
 $ cd BUILD
 $ cmake [options] ..
@@ -67,7 +70,8 @@ you can specify by `CMAKE_C_FLAGS`, `CMAKE_CXX_FLAGS`, and `CMAKE_Fortran_FLAGS`
 ### INTEL/GNU/PGI compiler
 
   ~~~
-  $ cmake -DINSTALL_DIR=${TP_HOME}/TextParser -Dwith_MPI=yes -Denable_fapi=yes -Denable_test=yes ..
+  $ cmake -DINSTALL_DIR=${TP_HOME}/TextParser -Denable_fapi=yes -Denable_test=yes
+          -Dwith_MPI=yes -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpicxx ..
   ~~~
 
 
